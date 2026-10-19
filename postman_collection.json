@@ -26,37 +26,6 @@
   ],
   "item": [
     {
-      "name": "01 — Готовность",
-      "request": {
-        "method": "GET",
-        "auth": {
-          "type": "noauth"
-        },
-        "header": [],
-        "url": {
-          "raw": "{{base_url}}/health",
-          "host": [
-            "{{base_url}}"
-          ],
-          "path": [
-            "health"
-          ]
-        }
-      },
-      "event": [
-        {
-          "listen": "test",
-          "script": {
-            "type": "text/javascript",
-            "exec": [
-              "pm.test(\"HTTP 200\", () => pm.response.to.have.status(200));",
-              "pm.test(\"Ready\", () => pm.expect(pm.response.json().status).to.eql(\"ok\"));"
-            ]
-          }
-        }
-      ]
-    },
-    {
       "name": "02 — Регистрация",
       "request": {
         "method": "POST",
